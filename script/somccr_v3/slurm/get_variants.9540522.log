@@ -1,0 +1,65 @@
+Removing preexisting bed files
+rm: cannot remove ‘/uufs/chpc.utah.edu/common/home/u1240855/git/somccr/data/output/somccr_v3/tcga.*.bed’: No such file or directory
+rm: cannot remove ‘/uufs/chpc.utah.edu/common/home/u1240855/git/somccr/data/output/somccr_v3/icgc.*.bed’: No such file or directory
+Processing TCGA WES variants
+sys:1: DtypeWarning: Columns (4) have mixed types.Specify dtype option on import or set low_memory=False.
+Processing ICGC WGS variants
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 1350, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 1417, in connect
+    super().connect()
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/http/client.py", line 921, in connect
+    self.sock = self._create_connection(
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/home/u1240855/git/somccr/script/somccr_v3/python/get_icgc.py", line 9, in <module>
+    pcawg_df = pd.read_csv("https://dcc.icgc.org/api/v1/download?fn=/PCAWG/consensus_snv_indel/final_consensus_passonly.snv_mnv_indel.icgc.public.maf.gz",
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 610, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 462, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 819, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 1050, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 1867, in __init__
+    self._open_handles(src, kwds)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/parsers.py", line 1362, in _open_handles
+    self.handles = get_handle(
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/common.py", line 558, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/common.py", line 289, in _get_filepath_or_buffer
+    req = urlopen(filepath_or_buffer)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/site-packages/pandas/io/common.py", line 195, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 542, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 1393, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/uufs/chpc.utah.edu/common/home/u1240855/software/pkg/miniconda3/lib/python3.8/urllib/request.py", line 1353, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 110] Connection timed out>
